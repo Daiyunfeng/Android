@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">Hello World</string>
+
+    <!-- 主界面 -->
+    <string name="btn_list_lab1">Lab1</string>
+    <string name="btn_list_lab2_1">Lab2-1</string>
+    <string name="btn_list_lab2_2">Lab2-2</string>
+    <string name="btn_list_Simple">Simple</string>
+    <string name="btn_list_Base">Base</string>
+    <string name="btn_list_Chat">Chat</string>
+
+    <string name="btn_list_delete">删除数据库</string>
+
+    <!-- 登陆界面文字 -->
+    <string name="tx_input">please input:</string>
+    <string name="btn_login">Login</string>
+    <string name="btn_register">Register</string>
+
+    <!-- 注册界面文字 -->
+    <string name="tx_register_title">Register Page</string>
+    <string name="tx_register_username">用户名:</string>
+    <string name="tx_register_password">密码:</string>
+    <string name="tx_register_age">年龄:</string>
+    <string name="tx_register_birthday">生日:</string>
+    <string name="tx_register_phone">电话:</string>
+
+    <string name="hint_register_username">请输入用户名</string>
+    <string name="hint_register_password">请输入密码</string>
+    <string name="hint_register_age">请输入年龄</string>
+    <string name="hint_register_birthday">请输入生日</string>
+    <string name="hint_register_phone">请输入电话号码</string>
+
+    <!-- 计算界面 -->
+    <string name="tx_calculate_title">Calculate Page</string>
+    <string name="tx_calculate_username">用户名:</string>
+    <string name="tx_calculate_password">密码:</string>
+    <string name="tx_calculate_height">身高(m):</string>
+    <string name="tx_calculate_weight">体重(kg):</string>
+    <string name="btn_calculate_calc">计算</string>
+    <string name="btn_calculate_test">测试按钮</string>
+    <string name="btn_calculate_reset">重置</string>
+
+    <!-- 按钮下拉菜单 -->
+    <string name="rb_button_boy">男</string>
+    <string name="rb_button_girl">女</string>
+    <string name="cb_button_math">数学</string>
+    <string name="cb_button_chinese">语文</string>
+    <string name="cb_button_english">英语</string>
+    <string name="tb_button_open_off">滋不滋磁</string>
+    <string name="tb_button_open_on">滋磁</string>
+</resources>

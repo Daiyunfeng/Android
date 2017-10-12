@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:fitsSystemWindows="true"
+              android:orientation="vertical"
+              android:background="@color/colorBackground">
+    <!--使用drawableLeft 在textview 左边放图片 不需要一个水平的线性布局 2个组件
+    不知道如何修改位置 只能通过padding 通过setCompoundDrawables动态修改-->
+    <TextView
+        android:id="@+id/tx_register_title"
+        android:text="@string/tx_register_title"
+        android:textSize="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:drawableLeft="@mipmap/ic_launcher"
+        android:drawablePadding="10dp"
+        android:gravity="center"/>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:fitsSystemWindows="true"
+                  android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tx_register_username"
+            android:text="@string/tx_register_username"
+            android:textSize="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/et_register_username"
+            android:hint="@string/hint_register_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:fitsSystemWindows="true"
+                  android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tx_register_password"
+            android:text="@string/tx_register_password"
+            android:textSize="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/et_register_password"
+            android:inputType="textPassword"
+            android:hint="@string/hint_register_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:fitsSystemWindows="true"
+                  android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tx_register_age"
+            android:text="@string/tx_register_age"
+            android:textSize="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/et_register_age"
+            android:hint="@string/hint_register_age"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:fitsSystemWindows="true"
+                  android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tx_register_birthday"
+            android:text="@string/tx_register_birthday"
+            android:textSize="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/et_register_birthday"
+            android:hint="@string/hint_register_birthday"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:fitsSystemWindows="true"
+                  android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tx_register_phone"
+            android:text="@string/tx_register_phone"
+            android:textSize="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/et_register_phone"
+            android:hint="@string/hint_register_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- countdown view-->
+    <attr name="text" format="string"></attr>
+    <attr name="progress_color" format="color"></attr>
+    <attr name="center_bg" format="color"></attr>
+    <attr name="text_color" format="color"></attr>
+    <attr name="text_size" format="dimension"></attr>
+    <attr name="progress_width" format="dimension"></attr>
+    <attr name="time" format="integer"></attr>
+    <declare-styleable name="count_down" >
+        <attr name="text" />
+        <attr name="progress_color" />
+        <attr name="center_bg" />
+        <attr name="text_color" />
+        <attr name="text_size"/>
+        <attr name="progress_width" />
+        <attr name="time" />
+    </declare-styleable>
+</resources>
