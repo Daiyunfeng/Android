@@ -35,9 +35,9 @@ public class ButtonActivity extends Activity
 {
     private static final String TAG = "ButtonActivity";
     private Spinner spnCities, spnProvinces, spnAreas;
-    private RadioButton rbBoy,rbGirl;
+    private RadioButton rbBoy, rbGirl;
     private RadioGroup groupSex;
-    private CheckBox cbMath,cbChinese,cbEnglish;
+    private CheckBox cbMath, cbChinese, cbEnglish;
     private ImageView image;
     private ToggleButton tb;
 
@@ -66,11 +66,10 @@ public class ButtonActivity extends Activity
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked)
             {
-                if(isChecked)
+                if (isChecked)
                 {
                     image.setImageResource(R.mipmap.btn_on);
-                }
-                else
+                } else
                 {
                     image.setImageResource(R.mipmap.btn_press);
                 }
@@ -85,7 +84,7 @@ public class ButtonActivity extends Activity
         spnAreas = (Spinner) findViewById(R.id.spn_button_areas);
 
         List<Province> provinces = DataSupport.findAll(Province.class);
-        ArrayAdapter<Province> provinceArrayAdapter = new ArrayAdapter<>(this,android.R.layout.simple_spinner_dropdown_item,provinces);
+        ArrayAdapter<Province> provinceArrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, provinces);
         spnProvinces.setAdapter(provinceArrayAdapter);
         spnProvinces.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
         {
@@ -94,8 +93,8 @@ public class ButtonActivity extends Activity
             {
                 Province province = (Province) parent.getAdapter().getItem(position);
                 int provinceId = province.getId();
-                List<City> cities = DataSupport.where("province_id = ?",String.valueOf(provinceId)).find(City.class);
-                ArrayAdapter<City> cityArrayAdapter = new ArrayAdapter<>(ButtonActivity.this,android.R.layout.simple_spinner_dropdown_item,cities);
+                List<City> cities = DataSupport.where("province_id = ?", String.valueOf(provinceId)).find(City.class);
+                ArrayAdapter<City> cityArrayAdapter = new ArrayAdapter<>(ButtonActivity.this, android.R.layout.simple_spinner_dropdown_item, cities);
                 spnCities.setAdapter(cityArrayAdapter);
             }
 
@@ -113,8 +112,8 @@ public class ButtonActivity extends Activity
             {
                 City city = (City) parent.getAdapter().getItem(position);
                 int cityId = city.getId();
-                List<Area> areas = DataSupport.where("city_id = ?",String.valueOf(cityId)).find(Area.class);
-                ArrayAdapter<Area> areaArrayAdapter = new ArrayAdapter<>(ButtonActivity.this,android.R.layout.simple_spinner_dropdown_item,areas);
+                List<Area> areas = DataSupport.where("city_id = ?", String.valueOf(cityId)).find(Area.class);
+                ArrayAdapter<Area> areaArrayAdapter = new ArrayAdapter<>(ButtonActivity.this, android.R.layout.simple_spinner_dropdown_item, areas);
                 spnAreas.setAdapter(areaArrayAdapter);
             }
 
@@ -136,13 +135,12 @@ public class ButtonActivity extends Activity
             @Override
             public void onCheckedChanged(RadioGroup group, @IdRes int checkedId)
             {
-                if(checkedId == rbBoy.getId())
+                if (checkedId == rbBoy.getId())
                 {
-                    Toast.makeText(ButtonActivity.this,"你点了"+rbBoy.getText(),Toast.LENGTH_SHORT).show();
-                }
-                else
+                    Toast.makeText(ButtonActivity.this, "你点了" + rbBoy.getText(), Toast.LENGTH_SHORT).show();
+                } else
                 {
-                    Toast.makeText(ButtonActivity.this,"你点了"+rbGirl.getText(),Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ButtonActivity.this, "你点了" + rbGirl.getText(), Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -153,9 +151,9 @@ public class ButtonActivity extends Activity
         @Override
         public void onCheckedChanged(CompoundButton buttonView, boolean isChecked)
         {
-            if(isChecked == true)
+            if (isChecked == true)
             {
-                Toast.makeText(ButtonActivity.this,"选中"+buttonView.getText(),Toast.LENGTH_SHORT).show();
+                Toast.makeText(ButtonActivity.this, "选中" + buttonView.getText(), Toast.LENGTH_SHORT).show();
             }
         }
     }

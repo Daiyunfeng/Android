@@ -36,6 +36,9 @@
 
         <!-- Lab2-2 -->
         <activity android:name=".activity.ButtonActivity"/>
+
+        <!-- ListView -->
+        <activity android:name=".activity.SimpleLVActivity"/>
     </application>
 
 </manifest>
