@@ -17,14 +17,13 @@ import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import com.example.lenovo.hello.R;
-import com.example.lenovo.hello.model.Area;
-import com.example.lenovo.hello.model.City;
-import com.example.lenovo.hello.model.Province;
+import com.example.lenovo.hello.entity.Area;
+import com.example.lenovo.hello.entity.City;
+import com.example.lenovo.hello.entity.Province;
 
 import org.litepal.crud.DataSupport;
 
 import java.util.List;
-import java.util.TooManyListenersException;
 
 /**
  * Lab2-2

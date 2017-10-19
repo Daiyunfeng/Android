@@ -1,10 +1,17 @@
 package com.example.lenovo.hello.adapter;
 
 import android.content.Context;
+import android.graphics.BitmapFactory;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.example.lenovo.hello.R;
+import com.example.lenovo.hello.model.Content;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,12 +24,12 @@ import java.util.Objects;
 
 public class WeChatAdapter extends BaseAdapter
 {
-    private LayoutInflater m_inflater;
-    private List<Map<String,Objects>> mData;
+    private Context context;
+    private List<Content> mData;
 
-    public WeChatAdapter(Context c,List<Map<String,Objects>> data)
+    public WeChatAdapter(Context c,List<Content> data)
     {
-        m_inflater = LayoutInflater.from(c);
+        context = c;
         mData = new ArrayList<>();
         for(int i=0;i<data.size();i++)
         {
@@ -51,7 +58,24 @@ public class WeChatAdapter extends BaseAdapter
     @Override
     public View getView(int position, View convertView, ViewGroup parent)
     {
-        return null;
+        Content content = mData.get(position);
+        if(content.getPosition()==Content.CHAT_LEFT)
+        {
+            convertView = LayoutInflater.from(context).inflate(R.layout.wechat_left,null);
+            ImageView imgHead =(ImageView) convertView.findViewById(R.id.iv_wechat_left_head);
+            imgHead.setImageBitmap(BitmapFactory.decodeResource(context.getResources(), content.getUser().getHead()));
+            TextView tvContent = (TextView) convertView.findViewById(R.id.tv_wechat_left);
+            tvContent.setText(content.getText());
+        }
+        else if(content.getPosition()==Content.CHAT_RIGHT)
+        {
+            convertView = LayoutInflater.from(context).inflate(R.layout.wechat_right,null);
+            ImageView imgHead =(ImageView) convertView.findViewById(R.id.iv_wechat_right_head);
+            imgHead.setImageBitmap(BitmapFactory.decodeResource(context.getResources(), content.getUser().getHead()));
+            TextView tvContent = (TextView) convertView.findViewById(R.id.tv_wechat_right);
+            tvContent.setText(content.getText());
+        }
+        return convertView;
     }
 
 }

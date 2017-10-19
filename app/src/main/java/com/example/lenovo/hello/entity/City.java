@@ -1,4 +1,4 @@
-package com.example.lenovo.hello.model;
+package com.example.lenovo.hello.entity;
 
 import com.google.gson.annotations.SerializedName;
 

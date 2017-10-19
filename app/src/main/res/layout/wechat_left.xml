@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
     <ImageView
-        android:id="@+id/iv_wechat_right_head"
+        android:id="@+id/iv_wechat_left_head"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:layout_marginTop="5dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_alignParentRight="true"/>
+        android:layout_marginTop="5dp"
+        android:layout_alignParentLeft="true"/>
     <TextView
-        android:id="@+id/tv_wechat_right"
+        android:id="@+id/tv_wechat_left"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20dp"
         android:layout_marginTop="3dp"
-        android:layout_toLeftOf="@id/iv_wechat_right_head"
-        android:background="@mipmap/chatright_bg_normal"
-        android:layout_marginLeft="48dp"/>
+        android:layout_toRightOf="@id/iv_wechat_left_head"
+        android:layout_marginRight="48dp"
+        android:background="@mipmap/chatleft_bg_normal"/>
 
 </RelativeLayout>

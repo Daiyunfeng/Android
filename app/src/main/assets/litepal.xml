@@ -5,8 +5,8 @@
     <version value = "1"></version>
 
     <list>
-        <mapping class="com.example.lenovo.hello.model.City"></mapping>
-        <mapping class="com.example.lenovo.hello.model.Province"></mapping>
-        <mapping class="com.example.lenovo.hello.model.Area"></mapping>
+        <mapping class="com.example.lenovo.hello.entity.City"></mapping>
+        <mapping class="com.example.lenovo.hello.entity.Province"></mapping>
+        <mapping class="com.example.lenovo.hello.entity.Area"></mapping>
     </list>
 </litepal>

@@ -39,6 +39,7 @@
 
         <!-- ListView -->
         <activity android:name=".activity.SimpleLVActivity"/>
+        <activity android:name=".activity.WeChatLVActivity"/>
     </application>
 
 </manifest>
