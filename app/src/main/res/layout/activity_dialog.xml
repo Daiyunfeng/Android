@@ -1,35 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:fitsSystemWindows="true">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <Button
-            android:id="@+id/btn_dialog_simple"
-            android:layout_width="wrap_content"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+    <LinearLayout android:orientation="vertical"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:fitsSystemWindows="true">
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/btn_dialog_simple"/>
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/btn_dialog_simple"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_dialog_simple"/>
+
+            <Button
+                android:id="@+id/btn_dialog_complex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_dialog_complex"/>
+
+        </LinearLayout>
+
+        <DatePicker
+            android:id="@+id/datepicker_dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
         <Button
-            android:id="@+id/btn_dialog_complex"
+            android:id="@+id/btn_dialog_tp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/btn_dialog_complex"/>
+            android:text="@string/btn_dialog_tp"/>
 
+        <AnalogClock
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <DigitalClock
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <ProgressBar
+            android:id="@+id/pb_dialog_small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            style="@android:style/Widget.ProgressBar.Small"/>
+
+        <ProgressBar
+            android:id="@+id/pb_dialog_large"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            style="@android:style/Widget.ProgressBar.Large"/>
+
+        <ProgressBar
+            android:id="@+id/pb_dialog_inverse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            style="@android:style/Widget.ProgressBar.Inverse"/>
+
+        <ProgressBar
+            android:id="@+id/pb_dialog_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:secondaryProgress="60"
+            android:layout_gravity="center_horizontal"
+            style="@android:style/Widget.ProgressBar.Horizontal"/>
+        <SeekBar
+            android:id="@+id/sb_dialog_simple"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:layout_gravity="center_horizontal"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/btn_dialog_see"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_dialog_see"/>
+
+            <Button
+                android:id="@+id/btn_dialog_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_dialog_add"/>
+
+            <Button
+                android:id="@+id/btn_dialog_reduce"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_dialog_reduce"/>
+        </LinearLayout>
     </LinearLayout>
-
-    <DatePicker
-        android:id="@+id/datepicker_dialog"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-    <Button
-        android:id="@+id/btn_dialog_tp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/btn_dialog_tp"/>
-</LinearLayout>
+</ScrollView>

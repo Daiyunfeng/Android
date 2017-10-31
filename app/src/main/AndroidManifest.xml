@@ -43,6 +43,12 @@
 
         <!-- lab3 -->
         <activity android:name=".activity.DialogActivity"/>
+
+        <!-- lab4 -->
+        <activity android:name=".activity.PhoneActivity"/>
+
+        <!-- lab5 -->
+        <activity android:name=".activity.MenuActivity"/>
     </application>
 
 </manifest>
