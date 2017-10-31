@@ -51,6 +51,13 @@
         android:text="@string/btn_list_Chat"/>
 
     <Button
+        android:id="@+id/btn_list_lab3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/btn_list_lab3"/>
+
+    <Button
         android:id="@+id/btn_list_delete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

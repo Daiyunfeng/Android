@@ -22,7 +22,7 @@ import java.util.Map;
 public class SimpleLVActivity extends Activity
 {
     private static final String TAG = "SimpleLVActivity";
-    private String[] strElement ;
+    private String[] strElement;
     private String[] titles;
     private String[] contents;
     private int[] imageids;
@@ -34,28 +34,28 @@ public class SimpleLVActivity extends Activity
         super.onCreate(savedInstanceState);
         this.setContentView(R.layout.activity_simple);
         listView = (ListView) findViewById(R.id.lv_simple);
-        strElement = new String[]{"image","title","content"};
+        strElement = new String[]{"image", "title", "content"};
         titles = new String[10];
         contents = new String[10];
         imageids = new int[10];
-        List<Map<String,Object>> listItems = new ArrayList<>();
-        for(int i=0;i<10;i++)
+        List<Map<String, Object>> listItems = new ArrayList<>();
+        for (int i = 0; i < 10; i++)
         {
-            Map<String,Object> tmp = new HashMap<>();
+            Map<String, Object> tmp = new HashMap<>();
             titles[i] = "胡迪恒";
             contents[i] = "";
-            for(int j=0;j<=i;j++)
+            for (int j = 0; j <= i; j++)
             {
-                contents[i]+="给胡迪恒上香";
+                contents[i] += "给胡迪恒上香";
             }
-            imageids[i]=R.mipmap.lv_head;
-            tmp.put(strElement[0],imageids[i]);
-            tmp.put(strElement[1],titles[i]);
-            tmp.put(strElement[2],contents[i]);
+            imageids[i] = R.mipmap.lv_head;
+            tmp.put(strElement[0], imageids[i]);
+            tmp.put(strElement[1], titles[i]);
+            tmp.put(strElement[2], contents[i]);
             listItems.add(tmp);
         }
-        Log.i(TAG,""+listItems.size());
-        SimpleAdapter simpleAdapter = new SimpleAdapter(this,listItems,R.layout.simple_list_item,strElement,new int[]{R.id.lv_iv_icon,R.id.lv_tv_title,R.id.lv_tv_content});
+        Log.i(TAG, "" + listItems.size());
+        SimpleAdapter simpleAdapter = new SimpleAdapter(this, listItems, R.layout.simple_list_item, strElement, new int[]{R.id.lv_iv_icon, R.id.lv_tv_title, R.id.lv_tv_content});
         listView.setAdapter(simpleAdapter);
     }
 }

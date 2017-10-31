@@ -8,6 +8,7 @@
     <string name="btn_list_Simple">Simple</string>
     <string name="btn_list_Base">Base</string>
     <string name="btn_list_Chat">Chat</string>
+    <string name="btn_list_lab3">lab3</string>
 
     <string name="btn_list_delete">删除数据库</string>
 
@@ -48,4 +49,10 @@
     <string name="cb_button_english">英语</string>
     <string name="tb_button_open_off">滋不滋磁</string>
     <string name="tb_button_open_on">滋磁</string>
+
+    <!-- dialog -->
+    <string name="btn_dialog_simple">Simple dialog</string>
+    <string name="btn_dialog_complex">Complex dialog</string>
+    <string name="btn_dialog_tp">TPDialog</string>
+
 </resources>

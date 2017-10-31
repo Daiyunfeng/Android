@@ -40,6 +40,9 @@
         <!-- ListView -->
         <activity android:name=".activity.SimpleLVActivity"/>
         <activity android:name=".activity.WeChatLVActivity"/>
+
+        <!-- lab3 -->
+        <activity android:name=".activity.DialogActivity"/>
     </application>
 
 </manifest>

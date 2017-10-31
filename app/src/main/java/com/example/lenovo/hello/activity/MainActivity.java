@@ -23,7 +23,7 @@ import org.litepal.tablemanager.Connector;
 public class MainActivity extends Activity
 {
     private static final String TAG = "MainActivity";
-    private Button btnLab1, btnLab2, btnLab22, btnSimple,btnWeChat, btnDelete;
+    private Button btnLab1, btnLab2, btnLab22, btnSimple, btnWeChat, btnDelete, btnLab3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -37,11 +37,13 @@ public class MainActivity extends Activity
         btnSimple = (Button) findViewById(R.id.btn_list_view_simple);
         btnDelete = (Button) findViewById(R.id.btn_list_delete);
         btnWeChat = (Button) findViewById(R.id.btn_list_view_chat);
+        btnLab3 = (Button) findViewById(R.id.btn_list_lab3);
         btnLab1.setOnClickListener(new MyButtonOnClickListener(LoginActivity.class));
         btnLab2.setOnClickListener(new MyButtonOnClickListener(CalcActivity.class));
         btnLab22.setOnClickListener(new MyButtonOnClickListener(ButtonActivity.class));
         btnSimple.setOnClickListener(new MyButtonOnClickListener(SimpleLVActivity.class));
         btnWeChat.setOnClickListener((new MyButtonOnClickListener(WeChatLVActivity.class)));
+        btnLab3.setOnClickListener(new MyButtonOnClickListener(DialogActivity.class));
         btnDelete.setOnClickListener(new View.OnClickListener()
         {
             @Override
