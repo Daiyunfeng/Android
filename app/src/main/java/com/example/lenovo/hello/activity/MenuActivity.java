@@ -4,9 +4,14 @@ import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
+import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Adapter;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.PopupMenu;
@@ -22,10 +27,13 @@ import com.example.lenovo.hello.utils.RandomColor;
 
 public class MenuActivity extends Activity
 {
+    private final static String TAG = "MenuActivity";
     private final static int ITEM_RED = 1, ITEM_BULE = 2, ITEM_GREEN = 3, ITEM_CHIESE = 4, ITEM_MATH = 5, ITEM_ENGLISH = 6;
     private TextView textView;
     private Button buttonMenu1, buttonMenu2, buttonMenu3;
     private ListView listView;
+    private int selected,checked;
+    private String[] items;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState)
@@ -110,19 +118,21 @@ public class MenuActivity extends Activity
             public void onClick(View v)
             {
                 PopupMenu pm = new PopupMenu(MenuActivity.this, buttonMenu3);
-                Menu menu = pm.getMenu();
                 getMenuInflater().inflate(R.menu.menu_check, pm.getMenu());
+                pm.getMenu().findItem(checked).setChecked(true);
                 pm.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener()
                 {
                     @Override
                     public boolean onMenuItemClick(MenuItem item)
                     {
-                        if(item.isChecked()==true)
+                        if (item.isChecked() == true)
                         {
-                            item.setChecked(false);
+                            //单选
+                            return true;
                         }
                         else
                         {
+                            checked = item.getItemId();
                             item.setChecked(true);
                         }
                         return true;
@@ -133,6 +143,42 @@ public class MenuActivity extends Activity
         });
 
         //ListView
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(MenuActivity.this, android.R.layout.simple_list_item_1);
+        for (int i = 0; i < items.length; i++)
+        {
+            adapter.add(items[i]);
+        }
+        listView.setAdapter(adapter);
+        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener()
+        {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id)
+            {
+                selected = position;
+                return false;
+            }
+        });
+        registerForContextMenu(listView);
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo)
+    {
+        menu.add(Menu.NONE, ITEM_RED, 1, "RED");
+        menu.add(Menu.NONE, ITEM_BULE, 2, "BLUE");
+        menu.add(Menu.NONE, ITEM_GREEN, 3, "GREEN");
+        super.onCreateContextMenu(menu, v, menuInfo);
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item)
+    {
+        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+        int indexOfContextMenu = info.position;
+        String str = items[selected];
+        str += item.toString();
+        textView.setText(str);
+        return super.onContextItemSelected(item);
     }
 
     @Override
@@ -159,5 +205,8 @@ public class MenuActivity extends Activity
         buttonMenu3 = (Button) findViewById(R.id.btn_menu_menu);
         buttonMenu2 = (Button) findViewById(R.id.btn_menu_popupmenu2);
         listView = (ListView) findViewById(R.id.lv_menu);
+        items = new String[]{"我喜欢", "我讨厌", "我不在乎"};
+        selected = 0;
+        checked=R.id.menu_item_check1;
     }
 }
