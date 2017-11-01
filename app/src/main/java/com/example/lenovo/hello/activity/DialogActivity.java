@@ -47,8 +47,8 @@ public class DialogActivity extends Activity
         //获取width height
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-        String text = "width="+displayMetrics.widthPixels+" height"+displayMetrics.heightPixels;
-        MyToast.showText(DialogActivity.this,text);
+        String text = "width=" + displayMetrics.widthPixels + " height" + displayMetrics.heightPixels;
+        MyToast.showText(DialogActivity.this, text);
         //初始化变量
         init();
         //事件注册
@@ -67,7 +67,7 @@ public class DialogActivity extends Activity
                     @Override
                     public void onClick(DialogInterface dialog, int which)
                     {
-                        MyToast.showText(DialogActivity.this,"我需要帮助");
+                        MyToast.showText(DialogActivity.this, "我需要帮助");
                     }
                 });
                 builder.setNegativeButton("取消", null);
@@ -91,7 +91,7 @@ public class DialogActivity extends Activity
                     {
                         if (isChecked == true)
                         {
-                            MyToast.showText(DialogActivity.this,items[which]);
+                            MyToast.showText(DialogActivity.this, items[which]);
                         }
                     }
                 });
@@ -121,7 +121,7 @@ public class DialogActivity extends Activity
             public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth)
             {
                 String text = year + "年" + monthOfYear + "月" + dayOfMonth + "天";
-                MyToast.showText(DialogActivity.this,text);
+                MyToast.showText(DialogActivity.this, text);
             }
         });
 
@@ -136,7 +136,7 @@ public class DialogActivity extends Activity
                     public void onTimeSet(TimePicker view, int hourOfDay, int minute)
                     {
                         String text = hourOfDay + "点" + minute + "分";
-                        MyToast.showText(DialogActivity.this,text);
+                        MyToast.showText(DialogActivity.this, text);
                     }
                 };
                 Calendar c = Calendar.getInstance();
@@ -182,8 +182,8 @@ public class DialogActivity extends Activity
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser)
             {
-                String text = "当前位置"+progress;
-                MyToast.showText(DialogActivity.this,text);
+                String text = "当前位置" + progress;
+                MyToast.showText(DialogActivity.this, text);
             }
 
             @Override

@@ -25,4 +25,17 @@ public class MyToast
         }
         mToast.show();
     }
+    public static void showText(Context activity, String text,int length)
+    {
+        if(mToast == null)
+        {
+            mToast = Toast.makeText(activity, text, length);
+        }
+        else
+        {
+            mToast.setText(text);
+            mToast.setDuration(length);
+        }
+        mToast.show();
+    }
 }

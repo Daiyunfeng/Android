@@ -61,5 +61,20 @@
     <string name="btn_dialog_reduce">Reduce</string>
 
     <!-- Lab4 -->
-    <string name="lb_phone">号  码:</string>
+    <string name="tx_phone_number">号  码:</string>
+    <string name="btn_phone_call">拨打电话</string>
+    <string name="tx_phone_username">用户名:</string>
+    <string name="tx_phone_password">密  码:</string>
+    <string name="btn_phone_log1">登陆1</string>
+    <string name="btn_phone_log2">登陆2</string>
+
+    <!-- Menu -->
+    <string name="btn_menu_popupmenu">Popupmenu</string>
+    <string name="btn_menu_menu">menu</string>
+    <string name="menu_item_red">red</string>
+    <string name="menu_item_blue">blue</string>
+    <string name="menu_item_green">green</string>
+    <string name="menu_item_check1">check1</string>
+    <string name="menu_item_check2">check2</string>
+    <string name="menu_item_check3">check3</string>
 </resources>
