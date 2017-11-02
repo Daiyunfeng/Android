@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.SubMenu;
 import android.view.View;
 import android.widget.Adapter;
 import android.widget.AdapterView;
@@ -28,7 +29,7 @@ import com.example.lenovo.hello.utils.RandomColor;
 public class MenuActivity extends Activity
 {
     private final static String TAG = "MenuActivity";
-    private final static int ITEM_RED = 1, ITEM_BULE = 2, ITEM_GREEN = 3, ITEM_CHIESE = 4, ITEM_MATH = 5, ITEM_ENGLISH = 6;
+    private final static int ITEM_RED = 1, ITEM_BULE = 2, ITEM_GREEN = 3, ITEM_COLOR=4;
     private TextView textView;
     private Button buttonMenu1, buttonMenu2, buttonMenu3;
     private ListView listView;
@@ -83,9 +84,10 @@ public class MenuActivity extends Activity
             {
                 PopupMenu pm = new PopupMenu(MenuActivity.this, buttonMenu2);
                 Menu menu = pm.getMenu();
-                menu.add(Menu.NONE, ITEM_RED, 1, "RED");
-                menu.add(Menu.NONE, ITEM_BULE, 2, "BLUE");
-                menu.add(Menu.NONE, ITEM_GREEN, 3, "GREEN");
+                SubMenu subMenu = menu.addSubMenu(Menu.NONE,ITEM_COLOR,1,"COLOR");
+                subMenu.add(Menu.NONE, ITEM_RED, 1, "RED");
+                subMenu.add(Menu.NONE, ITEM_BULE, 2, "BLUE");
+                subMenu.add(Menu.NONE, ITEM_GREEN, 3, "GREEN");
                 pm.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener()
                 {
                     @Override
