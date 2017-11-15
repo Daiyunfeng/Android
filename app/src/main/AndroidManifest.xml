@@ -52,7 +52,16 @@
         <activity android:name=".activity.SubActivity2"/>
 
         <!-- lab5 -->
-        <activity android:name=".activity.MenuActivity"/>
+        <activity android:name=".activity.MenuActivity"
+                  android:theme="@style/NoActionBarTheme"/>
+        <activity android:name=".activity.SubMenuActivity"
+                  android:theme="@style/NoActionBarTheme"
+                  android:parentActivityName=".activity.MenuActivity"/>
+        <meta-data android:name="android.support.PARENT_ACTIVITY"
+                    android:value=".activity.MenuActivity"/>
+
+        <!-- lab7 -->
+        <activity android:name=".activity.TabActivity"/>
     </application>
 
 </manifest>

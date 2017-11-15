@@ -6,4 +6,9 @@
         <item name="android:windowTranslucentNavigation">true</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
+    <style name="OverflowMenuStyle"
+           parent="@style/Widget.AppCompat.PopupMenu.Overflow">
+        <item name="overlapAnchor">false</item>
+        <item name="android:colorBackground">@color/colorPrimary</item>
+    </style>
 </resources>

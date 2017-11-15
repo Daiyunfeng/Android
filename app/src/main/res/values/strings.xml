@@ -11,6 +11,8 @@
     <string name="btn_list_lab3">lab3</string>
     <string name="btn_list_lab4">lab4</string>
     <string name="btn_list_lab5">lab5</string>
+    <string name="btn_list_lab7">lab7</string>
+    <string name="btn_list_lab7_3">lab8</string>
 
     <string name="btn_list_delete">删除数据库</string>
 
@@ -77,4 +79,8 @@
     <string name="menu_item_check1">check1</string>
     <string name="menu_item_check2">check2</string>
     <string name="menu_item_check3">check3</string>
+    <string name="menu_item_color">color</string>
+
+    <!-- page -->
+    <string name="btn_page_physical">Load Fragment</string>
 </resources>
