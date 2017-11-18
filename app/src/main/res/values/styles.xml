@@ -2,7 +2,6 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="AppTheme">
-        <!--在Android 4.4之前的版本上运行，直接跟随系统主题-->
     </style>
 
     <!--splash主题-->
@@ -19,12 +18,13 @@
 
     <style name="BaseTheme" parent="Theme.AppCompat.Light.DarkActionBar"/>
 
-    <style name="NoActionBarTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="NoActionBarTheme" parent="Theme.AppCompat.Light.NoActionBar"/>
+
+    <style name="BaseNoActionBarTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-
     <style name="OverflowMenuStyle"
            parent="@style/Widget.AppCompat.PopupMenu.Overflow">
         <item name="android:colorBackground">@color/colorPrimary</item>

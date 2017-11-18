@@ -12,7 +12,7 @@
     <string name="btn_list_lab4">lab4</string>
     <string name="btn_list_lab5">lab5</string>
     <string name="btn_list_lab7">lab7</string>
-    <string name="btn_list_lab7_3">lab8</string>
+    <string name="btn_list_lab8">lab8</string>
 
     <string name="btn_list_delete">删除数据库</string>
 
@@ -83,4 +83,9 @@
 
     <!-- page -->
     <string name="btn_page_physical">Load Fragment</string>
+
+    <!-- multithread -->
+    <string name="btn_simple_thread">SimpleThread</string>
+    <string name="btn_multi_thread">MultiThread</string>
+    <string name="btn_end_thread">EndThread</string>
 </resources>

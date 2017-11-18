@@ -12,7 +12,9 @@ public class Content
     private String text;
     private int position;
 
-    public Content(){}
+    public Content()
+    {
+    }
 
     public Content(User user, String text, int position)
     {

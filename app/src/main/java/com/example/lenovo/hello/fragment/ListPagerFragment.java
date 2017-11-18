@@ -20,17 +20,18 @@ import com.example.lenovo.hello.utils.MyToast;
 public class ListPagerFragment extends Fragment
 {
     private String[] items;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
-        View view= inflater.inflate(R.layout.page_header , container, false);
+        View view = inflater.inflate(R.layout.page_header, container, false);
         ListView listView = (ListView) view.findViewById(R.id.lv_page_header);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1);
         items = new String[10];
         for (int i = 0; i < 10; i++)
         {
-            items[i] = "items"+i;
-            adapter.add("items"+i);
+            items[i] = "items" + i;
+            adapter.add("items" + i);
         }
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener()
@@ -38,7 +39,7 @@ public class ListPagerFragment extends Fragment
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id)
             {
-                MyToast.showText(getActivity(),items[position]);
+                MyToast.showText(getActivity(), items[position]);
             }
         });
         return view;

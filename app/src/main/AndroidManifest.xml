@@ -15,7 +15,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/NoActionBarTheme">
         <activity android:name=".activity.SplashActivity"
                   android:screenOrientation="portrait"
                   android:theme="@style/Theme.Splash">
@@ -53,15 +53,18 @@
 
         <!-- lab5 -->
         <activity android:name=".activity.MenuActivity"
-                  android:theme="@style/NoActionBarTheme"/>
+                  android:theme="@style/BaseNoActionBarTheme"/>
         <activity android:name=".activity.SubMenuActivity"
-                  android:theme="@style/NoActionBarTheme"
+                  android:theme="@style/BaseNoActionBarTheme"
                   android:parentActivityName=".activity.MenuActivity"/>
         <meta-data android:name="android.support.PARENT_ACTIVITY"
                     android:value=".activity.MenuActivity"/>
 
         <!-- lab7 -->
         <activity android:name=".activity.TabActivity"/>
+
+        <!-- lab8 -->
+        <activity android:name=".activity.MultiThreadActivity"/>
     </application>
 
 </manifest>

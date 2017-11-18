@@ -1,49 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
               xmlns:toolbar="http://schemas.android.com/apk/res-auto"
               xmlns:app="http://schemas.android.com/apk/res-auto"
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/tb_menu"
-        toolbar:logo="@mipmap/ic_launcher"
-        android:background="@color/colorPrimary"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:popupTheme="@style/OverflowMenuStyle"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"/>
-
-    <TextView
-        android:id="@+id/tv_menu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="25dp"
-        android:text="随便写写啦啦啦啦啦"/>
     <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-        <Button
-            android:id="@+id/btn_menu_popupmenu1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/btn_menu_popupmenu"/>
-        <Button
-            android:id="@+id/btn_menu_popupmenu2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/btn_menu_popupmenu"/>
-        <Button
-            android:id="@+id/btn_menu_menu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/btn_menu_menu"/>
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/tb_menu"
+            toolbar:logo="@mipmap/ic_launcher"
+            android:background="@color/colorPrimary"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/OverflowMenuStyle"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"/>
 
+        <TextView
+            android:id="@+id/tv_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:text="随便写写啦啦啦啦啦"/>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/btn_menu_popupmenu1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_menu_popupmenu"/>
+            <Button
+                android:id="@+id/btn_menu_popupmenu2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_menu_popupmenu"/>
+            <Button
+                android:id="@+id/btn_menu_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_menu_menu"/>
+
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/lv_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
     </LinearLayout>
-
-    <ListView
-        android:id="@+id/lv_menu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-</LinearLayout>
+    <!-- -->
+    <LinearLayout
+        android:id="@+id/left_drawer"
+        android:layout_width="280dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:showDividers="middle"
+        android:background="#000000"
+        android:divider="#FFFFFF"
+        android:dividerHeight="1dp"
+        android:layout_gravity="start"
+        android:clickable="true"> <!-- 拦截点击事件 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/bangumi_home_ic_season_2"
+            android:textColor="#FFFFFF"
+            android:layout_gravity="center"
+            android:text="春"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/bangumi_home_ic_season_3"
+            android:textColor="#FFFFFF"
+            android:layout_gravity="center"
+            android:text="夏"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/bangumi_home_ic_season_4"
+            android:textColor="#FFFFFF"
+            android:layout_gravity="center"
+            android:text="秋"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/bangumi_home_ic_season_1"
+            android:textColor="#FFFFFF"
+            android:layout_gravity="center"
+            android:text="冬"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/bangumi_home_ic_season_1"
+            android:textColor="#FFFFFF"
+            android:layout_gravity="center"
+            android:text="冬"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/bangumi_home_ic_season_1"
+            android:textColor="#FFFFFF"
+            android:layout_gravity="center"
+            android:text="冬"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/bangumi_home_ic_season_1"
+            android:textColor="#FFFFFF"
+            android:layout_gravity="center"
+            android:text="冬"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/bangumi_home_ic_season_1"
+            android:textColor="#FFFFFF"
+            android:layout_gravity="center"
+            android:text="冬"/>
+    </LinearLayout>
+</android.support.v4.widget.DrawerLayout>

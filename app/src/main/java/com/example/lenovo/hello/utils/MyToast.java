@@ -10,28 +10,30 @@ import android.widget.Toast;
 public class MyToast
 {
     private static Toast mToast;
-    private MyToast(){}
+
+    private MyToast()
+    {
+    }
 
     public static void showText(Context activity, String text)
     {
-        if(mToast == null)
+        if (mToast == null)
         {
             mToast = Toast.makeText(activity, text, Toast.LENGTH_SHORT);
-        }
-        else
+        } else
         {
             mToast.setText(text);
             mToast.setDuration(Toast.LENGTH_SHORT);
         }
         mToast.show();
     }
-    public static void showText(Context activity, String text,int length)
+
+    public static void showText(Context activity, String text, int length)
     {
-        if(mToast == null)
+        if (mToast == null)
         {
             mToast = Toast.makeText(activity, text, length);
-        }
-        else
+        } else
         {
             mToast.setText(text);
             mToast.setDuration(length);

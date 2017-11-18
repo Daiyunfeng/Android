@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.PopupMenu;
 import android.widget.TextView;
@@ -33,13 +34,14 @@ import java.lang.reflect.Method;
 public class MenuActivity extends AppCompatActivity
 {
     private final static String TAG = "MenuActivity";
-    private final static int ITEM_RED = 1, ITEM_BULE = 2, ITEM_GREEN = 3, ITEM_COLOR=4;
+    private final static int ITEM_RED = 1, ITEM_BULE = 2, ITEM_GREEN = 3, ITEM_COLOR = 4;
     private TextView textView;
     private Button buttonMenu1, buttonMenu2, buttonMenu3;
     private ListView listView;
     private Toolbar toolbar;
-    private int selected,checked;
+    private int selected, checked;
     private String[] items;
+    private LinearLayout linearLayout;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState)
@@ -49,10 +51,9 @@ public class MenuActivity extends AppCompatActivity
         //随机背景颜色
         //this.getWindow().getDecorView().setBackgroundColor(RandomColor.randomColorInt());
         //toolbar
-        toolbar = (Toolbar)findViewById(R.id.tb_menu);
+        toolbar = (Toolbar) findViewById(R.id.tb_menu);
         toolbar.setTitle("大标题");
         toolbar.setSubtitle("小标题");
-
         setSupportActionBar(toolbar);
         init();
         buttonMenu1.setOnClickListener(new View.OnClickListener()
@@ -95,7 +96,7 @@ public class MenuActivity extends AppCompatActivity
             {
                 PopupMenu pm = new PopupMenu(MenuActivity.this, buttonMenu2);
                 Menu menu = pm.getMenu();
-                SubMenu subMenu = menu.addSubMenu(Menu.NONE,ITEM_COLOR,1,"COLOR");
+                SubMenu subMenu = menu.addSubMenu(Menu.NONE, ITEM_COLOR, 1, "COLOR");
                 subMenu.add(Menu.NONE, ITEM_RED, 1, "RED");
                 subMenu.add(Menu.NONE, ITEM_BULE, 2, "BLUE");
                 subMenu.add(Menu.NONE, ITEM_GREEN, 3, "GREEN");
@@ -142,8 +143,7 @@ public class MenuActivity extends AppCompatActivity
                         {
                             //单选
                             return true;
-                        }
-                        else
+                        } else
                         {
                             checked = item.getItemId();
                             item.setChecked(true);
@@ -172,6 +172,16 @@ public class MenuActivity extends AppCompatActivity
             }
         });
         registerForContextMenu(listView);
+
+//        linearLayout.setOnClickListener(new View.OnClickListener()
+//        {
+//            @Override
+//            public void onClick(View v)
+//            {
+//                //do nothing
+//                //让主界面的点击事件覆盖
+//            }
+//        });
     }
 
     @Override
@@ -208,13 +218,12 @@ public class MenuActivity extends AppCompatActivity
     @Override
     public boolean onOptionsItemSelected(MenuItem item)
     {
-        if(item.getItemId()==R.id.action_search)
+        if (item.getItemId() == R.id.action_search)
         {
             Intent intent = new Intent();
             intent.setClass(MenuActivity.this, SubMenuActivity.class);
             startActivity(intent);
-        }
-        else
+        } else
         {
             MyToast.showText(MenuActivity.this, "选中" + item.getTitle());
         }
@@ -222,14 +231,19 @@ public class MenuActivity extends AppCompatActivity
     }
 
     @Override
-    protected boolean onPrepareOptionsPanel(View view, Menu menu) {
-        if (menu != null) {
-            if (menu.getClass().getSimpleName().equals("MenuBuilder")) {
-                try{
+    protected boolean onPrepareOptionsPanel(View view, Menu menu)
+    {
+        if (menu != null)
+        {
+            if (menu.getClass().getSimpleName().equals("MenuBuilder"))
+            {
+                try
+                {
                     Method m = menu.getClass().getDeclaredMethod("setOptionalIconsVisible", Boolean.TYPE);
                     m.setAccessible(true);
                     m.invoke(menu, true);
-                } catch (Exception e) {
+                } catch (Exception e)
+                {
                     Log.e(getClass().getSimpleName(), "onMenuOpened...unable to set icons for overflow menu", e);
                 }
             }
@@ -244,8 +258,9 @@ public class MenuActivity extends AppCompatActivity
         buttonMenu3 = (Button) findViewById(R.id.btn_menu_menu);
         buttonMenu2 = (Button) findViewById(R.id.btn_menu_popupmenu2);
         listView = (ListView) findViewById(R.id.lv_menu);
+        linearLayout = (LinearLayout) findViewById(R.id.left_drawer);
         items = new String[]{"我喜欢", "我讨厌", "我不在乎"};
         selected = 0;
-        checked=R.id.menu_item_check1;
+        checked = R.id.menu_item_check1;
     }
 }

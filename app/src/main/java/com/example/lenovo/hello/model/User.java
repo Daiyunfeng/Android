@@ -10,9 +10,11 @@ public class User
     private String nickname;
     private int head;//头像 R.mipmap.
 
-    public User(){}
+    public User()
+    {
+    }
 
-    public User( String username, String nickname,int head)
+    public User(String username, String nickname, int head)
     {
         this.head = head;
         this.username = username;

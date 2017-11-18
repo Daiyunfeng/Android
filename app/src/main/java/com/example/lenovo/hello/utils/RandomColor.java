@@ -11,7 +11,9 @@ import java.util.Random;
 
 public class RandomColor
 {
-    private RandomColor(){}
+    private RandomColor()
+    {
+    }
 
     public static int randomColorInt()
     {
@@ -26,11 +28,11 @@ public class RandomColor
         return Color.parseColor(rgb);
     }
 
-    public  static int changeAlpha(int color,int alpha)
+    public static int changeAlpha(int color, int alpha)
     {
         int r = Color.red(color);
         int g = Color.green(color);
         int b = Color.blue(color);
-        return Color.argb(alpha,r,g,b);
+        return Color.argb(alpha, r, g, b);
     }
 }

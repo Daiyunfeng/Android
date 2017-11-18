@@ -6,7 +6,7 @@
             android:columnCount="4"
             android:fitsSystemWindows="true"
             android:orientation="horizontal"
-            android:rowCount="3">
+            android:rowCount="4">
 
     <Button
         android:id="@+id/btn_list_lab1"
@@ -79,11 +79,11 @@
         android:text="@string/btn_list_lab7"/>
 
     <Button
-        android:id="@+id/btn_list_lab7_3"
+        android:id="@+id/btn_list_lab8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="@string/btn_list_lab7_3"/>
+        android:text="@string/btn_list_lab8"/>
 
     <Button
         android:id="@+id/btn_list_delete"

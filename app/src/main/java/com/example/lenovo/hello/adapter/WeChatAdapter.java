@@ -27,11 +27,11 @@ public class WeChatAdapter extends BaseAdapter
     private Context context;
     private List<Content> mData;
 
-    public WeChatAdapter(Context c,List<Content> data)
+    public WeChatAdapter(Context c, List<Content> data)
     {
         context = c;
         mData = new ArrayList<>();
-        for(int i=0;i<data.size();i++)
+        for (int i = 0; i < data.size(); i++)
         {
             mData.add(data.get(i));
         }
@@ -59,18 +59,17 @@ public class WeChatAdapter extends BaseAdapter
     public View getView(int position, View convertView, ViewGroup parent)
     {
         Content content = mData.get(position);
-        if(content.getPosition()==Content.CHAT_LEFT)
+        if (content.getPosition() == Content.CHAT_LEFT)
         {
-            convertView = LayoutInflater.from(context).inflate(R.layout.wechat_left,null);
-            ImageView imgHead =(ImageView) convertView.findViewById(R.id.iv_wechat_left_head);
+            convertView = LayoutInflater.from(context).inflate(R.layout.wechat_left, null);
+            ImageView imgHead = (ImageView) convertView.findViewById(R.id.iv_wechat_left_head);
             imgHead.setImageBitmap(BitmapFactory.decodeResource(context.getResources(), content.getUser().getHead()));
             TextView tvContent = (TextView) convertView.findViewById(R.id.tv_wechat_left);
             tvContent.setText(content.getText());
-        }
-        else if(content.getPosition()==Content.CHAT_RIGHT)
+        } else if (content.getPosition() == Content.CHAT_RIGHT)
         {
-            convertView = LayoutInflater.from(context).inflate(R.layout.wechat_right,null);
-            ImageView imgHead =(ImageView) convertView.findViewById(R.id.iv_wechat_right_head);
+            convertView = LayoutInflater.from(context).inflate(R.layout.wechat_right, null);
+            ImageView imgHead = (ImageView) convertView.findViewById(R.id.iv_wechat_right_head);
             imgHead.setImageBitmap(BitmapFactory.decodeResource(context.getResources(), content.getUser().getHead()));
             TextView tvContent = (TextView) convertView.findViewById(R.id.tv_wechat_right);
             tvContent.setText(content.getText());

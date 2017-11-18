@@ -20,10 +20,11 @@ public class PhysicalPagerFragment extends Fragment
     private View view;
     private Button btn;
     private boolean flag;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
-        view = inflater.inflate(R.layout.page_physical , container, false);
+        view = inflater.inflate(R.layout.page_physical, container, false);
         init();
         return view;
     }
@@ -37,11 +38,11 @@ public class PhysicalPagerFragment extends Fragment
             @Override
             public void onClick(View v)
             {
-                if(!flag)
+                if (!flag)
                 {
-                    flag =true;
+                    flag = true;
                     FragmentTransaction ft = getFragmentManager().beginTransaction();
-                    ft.add(R.id.fl_page_physical,new LoadFragment());
+                    ft.add(R.id.fl_page_physical, new LoadFragment());
                     ft.addToBackStack(null);
                     ft.commit();
                 }
