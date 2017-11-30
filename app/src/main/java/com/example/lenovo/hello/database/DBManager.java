@@ -76,10 +76,12 @@ public class DBManager
             fos.close();
             is.close();
             Log.i(TAG, "End init");
-        } catch (FileNotFoundException e)
+        }
+        catch (FileNotFoundException e)
         {
             Log.e(TAG, e.getMessage());
-        } catch (IOException e)
+        }
+        catch (IOException e)
         {
             Log.e(TAG, e.getMessage());
         }
@@ -92,7 +94,8 @@ public class DBManager
         {
             context.deleteDatabase(DB_FILE);
             Toast.makeText(context, "成功删除数据库", Toast.LENGTH_SHORT).show();
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             Toast.makeText(context, e.getMessage(), Toast.LENGTH_SHORT).show();
             Log.e(TAG, e.getMessage());
@@ -104,7 +107,8 @@ public class DBManager
         try
         {
             this.db.close();
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             Log.e(TAG, e.getMessage());
         }

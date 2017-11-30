@@ -11,6 +11,7 @@
     <string name="btn_list_lab3">lab3</string>
     <string name="btn_list_lab4">lab4</string>
     <string name="btn_list_lab5">lab5</string>
+    <string name="btn_list_lab6">lab6</string>
     <string name="btn_list_lab7">lab7</string>
     <string name="btn_list_lab8">lab8</string>
 
@@ -81,6 +82,11 @@
     <string name="menu_item_check3">check3</string>
     <string name="menu_item_color">color</string>
 
+    <!-- ServiceActivity -->
+    <string name="btn_service_open_update">打开更新服务</string>
+    <string name="btn_service_close_update">关闭更新服务</string>
+    <string name="btn_service_open_music">打开音乐服务</string>
+    <string name="btn_service_close_music">关闭音乐按钮</string>
     <!-- page -->
     <string name="btn_page_physical">Load Fragment</string>
 
@@ -88,4 +94,8 @@
     <string name="btn_simple_thread">SimpleThread</string>
     <string name="btn_multi_thread">MultiThread</string>
     <string name="btn_end_thread">EndThread</string>
+    <string name="btn_thread_1">1</string>
+    <string name="btn_thread_5">5</string>
+    <string name="btn_thread_10">10</string>
+    <string name="btn_thread_download">download</string>
 </resources>

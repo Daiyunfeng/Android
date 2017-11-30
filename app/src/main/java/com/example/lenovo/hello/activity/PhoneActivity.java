@@ -140,7 +140,8 @@ public class PhoneActivity extends AppCompatActivity
             Method m = menu.getClass().getDeclaredMethod("setOptionalIconsVisible", Boolean.TYPE);
             m.setAccessible(true);
             m.invoke(menu, enable);
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             Log.e("aaa", e.getMessage());
         }

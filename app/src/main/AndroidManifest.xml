@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.example.lenovo.hello">
-    <!--<uses-permission android:name="android.permission.RECORD_AUDIO" />-->
-    <!--<uses-permission android:name="android.permission.INTERNET" />-->
-    <!--<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />-->
-    <!--<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />-->
-    <!--<uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />-->
-    <!--<uses-permission android:name="android.permission.READ_PHONE_STATE" />-->
+
+    <!-- <uses-permission android:name="android.permission.RECORD_AUDIO" /> -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <!-- <uses-permission android:name="android.permission.READ_PHONE_STATE" /> -->
     <uses-permission android:name="android.permission.CALL_PHONE"/>
+
     <application
         android:name="org.litepal.LitePalApplication"
         android:allowBackup="true"
@@ -16,9 +20,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/NoActionBarTheme">
-        <activity android:name=".activity.SplashActivity"
-                  android:screenOrientation="portrait"
-                  android:theme="@style/Theme.Splash">
+        <activity
+            android:name=".activity.SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -46,25 +51,39 @@
         <activity android:name=".activity.DialogActivity"/>
 
         <!-- lab4 -->
-        <activity android:name=".activity.PhoneActivity"
-                  android:theme="@style/BaseTheme"/>
+        <activity
+            android:name=".activity.PhoneActivity"
+            android:theme="@style/BaseTheme"/>
         <activity android:name=".activity.SubActivity1"/>
         <activity android:name=".activity.SubActivity2"/>
 
         <!-- lab5 -->
-        <activity android:name=".activity.MenuActivity"
-                  android:theme="@style/BaseNoActionBarTheme"/>
-        <activity android:name=".activity.SubMenuActivity"
-                  android:theme="@style/BaseNoActionBarTheme"
-                  android:parentActivityName=".activity.MenuActivity"/>
-        <meta-data android:name="android.support.PARENT_ACTIVITY"
-                    android:value=".activity.MenuActivity"/>
+        <activity
+            android:name=".activity.MenuActivity"
+            android:theme="@style/BaseNoActionBarTheme"/>
+        <activity
+            android:name=".activity.SubMenuActivity"
+            android:parentActivityName=".activity.MenuActivity"
+            android:theme="@style/BaseNoActionBarTheme"/>
+
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".activity.MenuActivity"/>
+
+        <!-- lab6 -->
+        <activity android:name=".activity.ServiceActivity"/>
 
         <!-- lab7 -->
         <activity android:name=".activity.TabActivity"/>
 
         <!-- lab8 -->
         <activity android:name=".activity.MultiThreadActivity"/>
+
+        <service
+            android:name=".service.MyService"
+            android:enabled="true"
+            android:exported="true">
+        </service>
     </application>
 
 </manifest>

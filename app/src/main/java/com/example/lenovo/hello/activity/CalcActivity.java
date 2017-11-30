@@ -63,7 +63,8 @@ public class CalcActivity extends Activity
                                                {
                                                    str = "极度超重";
                                                }
-                                           } catch (Exception e)
+                                           }
+                                           catch (Exception e)
                                            {
                                                str = e.getMessage();
                                            }
