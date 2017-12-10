@@ -23,7 +23,7 @@ import static android.os.Environment.getRootDirectory;
 public class LoginActivity extends Activity
 {
     private static final String TAG = "LoginActivity";
-    private Button btnLogin, btnRegister,btnFile;
+    private Button btnLogin, btnRegister, btnFile;
     private TextView tvInput;
 
     @Override
@@ -58,7 +58,7 @@ public class LoginActivity extends Activity
             }
         });
 
-        btnFile = (Button)findViewById(R.id.btn_login_file);
+        btnFile = (Button) findViewById(R.id.btn_login_file);
         btnFile.setOnClickListener(new View.OnClickListener()
         {
             @Override

@@ -93,6 +93,19 @@
         android:text="@string/btn_list_lab8"/>
 
     <Button
+        android:id="@+id/btn_list_lab9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/btn_list_lab9"/>
+    <Button
+        android:id="@+id/btn_list_lab10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/btn_list_lab10"/>
+
+    <Button
         android:id="@+id/btn_list_delete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

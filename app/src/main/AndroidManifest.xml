@@ -79,10 +79,25 @@
         <!-- lab8 -->
         <activity android:name=".activity.MultiThreadActivity"/>
 
+        <!-- lab9 -->
+        <activity android:name=".activity.HttpActivity"/>
+
+        <!-- lab10 -->
+        <activity android:name=".activity.BroadcastReceiverActivity"/>
+
         <service
             android:name=".service.MyService"
             android:enabled="true"
             android:exported="true">
+        </service>
+        <service
+            android:name=".service.MusicService"
+            android:enabled="true"
+            android:exported="true">
+        </service>
+        <service
+            android:name=".service.MyIntentService"
+            android:exported="false">
         </service>
     </application>
 

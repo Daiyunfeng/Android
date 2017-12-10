@@ -256,9 +256,10 @@ public class MultiThreadActivity extends AppCompatActivity
     /**
      * 下载界面 并输出进度
      */
-    private class MyAsyncTask extends AsyncTask<String,Integer,String>
+    private class MyAsyncTask extends AsyncTask<String, Integer, String>
     {
         private static final String TAG = "MyAsyncTask";
+
         @Override
         protected String doInBackground(String... params)
         {
@@ -279,24 +280,24 @@ public class MultiThreadActivity extends AppCompatActivity
                 conn.setRequestProperty("Accept-Encoding", "gzip"); //Transfer-Encoding 始终为chunked identity;q=1.0,gzip;q=0.5
                 conn.connect();
 
-                Map<String ,List<String>> header = conn.getHeaderFields();  //http://nxlhero.blog.51cto.com/962631/1868483
-                for(String key : header.keySet())
+                Map<String, List<String>> header = conn.getHeaderFields();  //http://nxlhero.blog.51cto.com/962631/1868483
+                for (String key : header.keySet())
                 {
-                    Log.i(TAG,key+"---");
-                    for(String value : header.get(key))
+                    Log.i(TAG, key + "---");
+                    for (String value : header.get(key))
                     {
-                        Log.i(TAG,value);
+                        Log.i(TAG, value);
                     }
-                    Log.i(TAG,"-------------");
+                    Log.i(TAG, "-------------");
                 }
                 int total = conn.getContentLength();
                 InputStream is = conn.getInputStream();
 //                GZIPInputStream gzin = null;
-                if(header.containsKey("Content-Encoding"))
+                if (header.containsKey("Content-Encoding"))
                 {
-                    for(String value : header.get("Content-Encoding"))
+                    for (String value : header.get("Content-Encoding"))
                     {
-                        if(value.equals("gzip"))
+                        if (value.equals("gzip"))
                         {
                             gzipFlag = true;
                             break;
@@ -305,7 +306,7 @@ public class MultiThreadActivity extends AppCompatActivity
                 }
 //                if(gzipFlag)
 //                    gzin = new GZIPInputStream(is);
-                Log.i(TAG,total+"");
+                Log.i(TAG, total + "");
                 ByteArrayOutputStream baos = new ByteArrayOutputStream();
                 byte[] buf = new byte[1024];
                 int count = 0;
@@ -318,7 +319,7 @@ public class MultiThreadActivity extends AppCompatActivity
                     {
                         publishProgress((int) ((count / (float) total) * 100));
                     }
-                    Log.i(TAG,new String(buf));
+                    Log.i(TAG, new String(buf));
                     Thread.sleep(1000);
                 }
                 conn.disconnect();
@@ -342,7 +343,7 @@ public class MultiThreadActivity extends AppCompatActivity
         @Override
         protected void onProgressUpdate(Integer... values)
         {
-            tvDownload.setText(values[0]+"%");
+            tvDownload.setText(values[0] + "%");
             super.onProgressUpdate(values);
         }
 

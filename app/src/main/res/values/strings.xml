@@ -14,6 +14,8 @@
     <string name="btn_list_lab6">lab6</string>
     <string name="btn_list_lab7">lab7</string>
     <string name="btn_list_lab8">lab8</string>
+    <string name="btn_list_lab9">lab9</string>
+    <string name="btn_list_lab10">lab10</string>
 
     <string name="btn_list_delete">删除数据库</string>
 
@@ -98,4 +100,7 @@
     <string name="btn_thread_5">5</string>
     <string name="btn_thread_10">10</string>
     <string name="btn_thread_download">download</string>
+
+    <!-- Http -->
+
 </resources>
