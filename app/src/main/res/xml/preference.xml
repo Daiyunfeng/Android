@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="系统设置">
+        <CheckBoxPreference
+            android:icon="@mipmap/ic_launcher"
+            android:key="cb_plane_mode"
+            android:defaultValue="false"
+            android:summaryOn="正常模式"
+            android:summaryOff="飞行模式"/>
+
+        <CheckBoxPreference
+            android:key="cb_voice_odd"
+            android:defaultValue="false"
+            android:summary="户外模式"
+            android:summaryOn="静音"
+            android:summaryOff="不静音"/>
+
+        <ListPreference
+            android:key = "list_vendor"
+            android:summary="请选择手机运营商"
+            android:title="请选择运营商..."
+            android:dialogTitle="请选择"
+            android:entries="@array/vendor"
+            android:entryValues="@array/vendor_value"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key = "group_language"
+        android:title="语言设置">
+        <SwitchPreference
+            android:key="switch_input"
+            android:title="打开中文输入法"
+            android:defaultValue="true"/>
+
+        <PreferenceScreen
+            android:key="ps_lan"
+            android:icon="@mipmap/ic_launcher"
+            android:title="选择语言"
+            android:summary="中文(中国)">
+            <!--<Preference-->
+                <!--android:key="lan_chinese"-->
+                <!--android:title="中文"/>-->
+            <!--<Preference-->
+                <!--android:key="lan_english"-->
+                <!--android:title="英文"/>-->
+        </PreferenceScreen>
+    </PreferenceCategory>
+</PreferenceScreen>

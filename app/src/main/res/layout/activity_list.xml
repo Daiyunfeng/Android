@@ -6,7 +6,7 @@
             android:columnCount="4"
             android:fitsSystemWindows="true"
             android:orientation="horizontal"
-            android:rowCount="4">
+            android:rowCount="5">
 
     <Button
         android:id="@+id/btn_list_lab1"
@@ -104,12 +104,24 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/btn_list_lab10"/>
+    <Button
+        android:id="@+id/btn_list_lab11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/btn_list_lab11"/>
 
+    <Button
+        android:id="@+id/btn_list_lab12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/btn_list_lab12"/>
     <Button
         android:id="@+id/btn_list_delete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_row="3"
+        android:layout_row="4"
         android:layout_column="3"
         android:gravity="center"
         android:text="@string/btn_list_delete"/>

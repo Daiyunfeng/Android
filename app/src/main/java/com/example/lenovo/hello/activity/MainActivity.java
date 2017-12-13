@@ -23,7 +23,8 @@ import org.litepal.tablemanager.Connector;
 public class MainActivity extends Activity
 {
     private static final String TAG = "MainActivity";
-    private Button btnLab1, btnLab2, btnLab22, btnSimple, btnWeChat, btnDelete, btnLab3, btnLab4, btnLab5, btnLab6, btnLab7, btnLab8, btnLab9,btnLab10;
+    private Button btnLab1, btnLab2, btnLab22, btnSimple, btnWeChat, btnDelete,
+            btnLab3, btnLab4, btnLab5, btnLab6, btnLab7, btnLab8, btnLab9, btnLab10, btnLab11, btnLab12;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -45,6 +46,8 @@ public class MainActivity extends Activity
         btnLab8 = (Button) findViewById(R.id.btn_list_lab8);
         btnLab9 = (Button) findViewById(R.id.btn_list_lab9);
         btnLab10 = (Button) findViewById(R.id.btn_list_lab10);
+        btnLab11 = (Button) findViewById(R.id.btn_list_lab11);
+        btnLab12 = (Button) findViewById(R.id.btn_list_lab12);
         btnLab1.setOnClickListener(new MyButtonOnClickListener(LoginActivity.class));
         btnLab2.setOnClickListener(new MyButtonOnClickListener(CalcActivity.class));
         btnLab22.setOnClickListener(new MyButtonOnClickListener(ButtonActivity.class));
@@ -57,7 +60,8 @@ public class MainActivity extends Activity
         btnLab7.setOnClickListener(new MyButtonOnClickListener(TabActivity.class));
         btnLab8.setOnClickListener(new MyButtonOnClickListener(MultiThreadActivity.class));
         btnLab9.setOnClickListener(new MyButtonOnClickListener(HttpActivity.class));
-        btnLab10.setOnClickListener(new MyButtonOnClickListener(BroadcastReceiverActivity.class));
+        btnLab10.setOnClickListener(new MyButtonOnClickListener(BroadcastActivity.class));
+        btnLab11.setOnClickListener(new MyButtonOnClickListener(DataActivity.class));
         btnDelete.setOnClickListener(new View.OnClickListener()
         {
             @Override

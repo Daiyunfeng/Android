@@ -8,10 +8,10 @@ import android.view.WindowManager;
 import com.example.lenovo.hello.R;
 
 /**
- * Created by lenovo on 2017/12/10.
+ * Created by lenovo on 2017/12/11.
  */
 
-public class BroadcastReceiverActivity extends AppCompatActivity
+public abstract class BaseActivity extends AppCompatActivity
 {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState)
@@ -20,6 +20,12 @@ public class BroadcastReceiverActivity extends AppCompatActivity
         this.getWindow().setFlags(
                 WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        this.setContentView(R.layout.activity_broadcast);
+        setContentView(R.layout.activity_multithread);
+        setContentView(getLayoutID());
+        init();
     }
+
+    protected abstract int getLayoutID();
+
+    protected abstract void init();
 }

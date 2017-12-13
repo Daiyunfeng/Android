@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="vendor">
+        <item>中国联通</item>
+        <item>中国移动</item>
+        <item>中国电信</item>
+    </string-array>
+
+    <string-array name="vendor_value">
+        <item>已选择中国联通</item>
+        <item>已选择中国移动</item>
+        <item>已选择中国电信</item>
+    </string-array>
+</resources>

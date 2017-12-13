@@ -49,14 +49,14 @@ import okhttp3.Response;
 
 public class HttpActivity extends AppCompatActivity
 {
-    private static final int REQUEST_STATUS_OK = 0, REQUEST_STATUS_ERROR=1, WEATER_RESULT = 2,POST_ERROR = 3,POST_OK = 4;
+    private static final int REQUEST_STATUS_OK = 0, REQUEST_STATUS_ERROR = 1, WEATER_RESULT = 2, POST_ERROR = 3, POST_OK = 4;
     private static final String TAG = "HttpActivity";
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private Spinner spnProvinces, spnCities;
-    private TextView cityTextView,resultTextView;
-    private Button queryButton,loginButton;
-    private EditText usernameEditText,passwordEditText;
+    private TextView cityTextView, resultTextView;
+    private Button queryButton, loginButton;
+    private EditText usernameEditText, passwordEditText;
     private String cityName;
     private String URL = "http://wthrcdn.etouch.cn/weather_mini?city=";
     private MyHandle handle = new MyHandle();
@@ -85,7 +85,7 @@ public class HttpActivity extends AppCompatActivity
         viewPager = (ViewPager) findViewById(R.id.vp_http_list);
         usernameEditText = (EditText) findViewById(R.id.et_http_username);
         passwordEditText = (EditText) findViewById(R.id.et_http_password);
-        resultTextView=(TextView) findViewById(R.id.tv_http_result);
+        resultTextView = (TextView) findViewById(R.id.tv_http_result);
 
         tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
         List<Province> provinces = DataSupport.findAll(Province.class);
@@ -104,7 +104,7 @@ public class HttpActivity extends AppCompatActivity
                 if (cities.size() < 2 || (cities.get(0).getCity().equals("市辖区") && cities.get(1).getCity().equals("县")))
                 {
                     cityName = province.getProvince();
-                    cityName = cityName.replaceAll("特别行政区","");
+                    cityName = cityName.replaceAll("特别行政区", "");
 //                    Log.i(TAG,cityName);
                     spnCities.setVisibility(View.INVISIBLE);
                     return;
@@ -247,14 +247,13 @@ public class HttpActivity extends AppCompatActivity
                             jsonObject = new JSONObject(result);
                             int code = jsonObject.getInt("return_code");
                             String res = jsonObject.getString("message");
-                            if(code == 1)
+                            if (code == 1)
                             {
                                 Message message = Message.obtain();
                                 message.what = HttpActivity.POST_ERROR;
                                 message.obj = res;
                                 handle.sendMessage(message);
-                            }
-                            else
+                            } else
                             {
                                 Message message = Message.obtain();
                                 message.what = HttpActivity.POST_OK;

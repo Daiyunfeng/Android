@@ -16,6 +16,8 @@
     <string name="btn_list_lab8">lab8</string>
     <string name="btn_list_lab9">lab9</string>
     <string name="btn_list_lab10">lab10</string>
+    <string name="btn_list_lab11">lab11</string>
+    <string name="btn_list_lab12">lab12</string>
 
     <string name="btn_list_delete">删除数据库</string>
 
