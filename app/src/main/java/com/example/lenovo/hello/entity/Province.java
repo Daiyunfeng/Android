@@ -14,10 +14,7 @@ public class Province extends DataSupport
 {
     private int id;
 
-    @SerializedName("province_name")
     private String province;
-
-    private List<City> citys;
 
     public int getId()
     {
@@ -29,11 +26,6 @@ public class Province extends DataSupport
         return province;
     }
 
-    public List<City> getCitys()
-    {
-        return citys;
-    }
-
     public void setId(int id)
     {
         this.id = id;
@@ -42,11 +34,6 @@ public class Province extends DataSupport
     public void setProvince(String province)
     {
         this.province = province;
-    }
-
-    public void setCitys(List<City> citys)
-    {
-        this.citys = citys;
     }
 
     /**

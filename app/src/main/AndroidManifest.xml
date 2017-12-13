@@ -90,6 +90,9 @@
         <activity android:name=".activity.DataActivity"/>
         <activity android:name=".activity.ListActivity"/>
 
+        <!-- lab12 -->
+        <activity android:name=".activity.SqlActivity"/>
+
         <service
             android:name=".service.MyService"
             android:enabled="true"

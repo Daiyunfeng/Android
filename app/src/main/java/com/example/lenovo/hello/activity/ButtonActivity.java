@@ -21,8 +21,10 @@ import com.example.lenovo.hello.entity.Area;
 import com.example.lenovo.hello.entity.City;
 import com.example.lenovo.hello.entity.Province;
 
+import org.litepal.LitePal;
 import org.litepal.crud.DataSupport;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -45,6 +47,8 @@ public class ButtonActivity extends Activity
     {
         super.onCreate(savedInstanceState);
         this.setContentView(R.layout.activity_button);
+        //使用默认的城市省份表
+        LitePal.useDefault();
         initSpinner();
         initRadioButton();
         initCheckBox();
@@ -95,6 +99,11 @@ public class ButtonActivity extends Activity
                 List<City> cities = DataSupport.where("province_id = ?", String.valueOf(provinceId)).find(City.class);
                 ArrayAdapter<City> cityArrayAdapter = new ArrayAdapter<>(ButtonActivity.this, android.R.layout.simple_spinner_dropdown_item, cities);
                 spnCities.setAdapter(cityArrayAdapter);
+                if (cities.size() == 0)
+                {
+                    ArrayAdapter<Area> areaArrayAdapter = new ArrayAdapter<>(ButtonActivity.this, android.R.layout.simple_spinner_dropdown_item, new ArrayList<Area>());
+                    spnAreas.setAdapter(areaArrayAdapter);
+                }
             }
 
             @Override

@@ -27,7 +27,10 @@ import com.google.gson.Gson;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.litepal.LitePal;
+import org.litepal.LitePalDB;
 import org.litepal.crud.DataSupport;
+import org.litepal.util.Const;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -71,6 +74,7 @@ public class HttpActivity extends AppCompatActivity
                 WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         this.setContentView(R.layout.activity_http);
+        LitePal.useDefault();
         init();
     }
 
@@ -89,6 +93,7 @@ public class HttpActivity extends AppCompatActivity
 
         tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
         List<Province> provinces = DataSupport.findAll(Province.class);
+        Log.i(TAG, provinces.size() + "");
         ArrayAdapter<Province> provinceArrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, provinces);
         spnProvinces.setAdapter(provinceArrayAdapter);
         spnProvinces.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
@@ -99,7 +104,7 @@ public class HttpActivity extends AppCompatActivity
                 Province province = (Province) parent.getAdapter().getItem(position);
                 int provinceId = province.getId();
                 List<City> cities = DataSupport.where("province_id = ?", String.valueOf(provinceId)).find(City.class);
-//                Log.i(TAG, cities.size() + "");
+                Log.i(TAG, cities.size() + "");
 //                Log.i(TAG,cities.get(1).getCity() +cities.get(0).getCity());
                 if (cities.size() < 2 || (cities.get(0).getCity().equals("市辖区") && cities.get(1).getCity().equals("县")))
                 {

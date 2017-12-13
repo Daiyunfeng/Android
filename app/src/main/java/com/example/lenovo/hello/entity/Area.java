@@ -1,5 +1,7 @@
 package com.example.lenovo.hello.entity;
 
+import com.google.gson.annotations.SerializedName;
+
 import org.litepal.crud.DataSupport;
 
 import java.util.List;
@@ -14,6 +16,9 @@ public class Area extends DataSupport
 
     private String area;
 
+    @SerializedName("city_id")
+    private int city_id;
+
     public int getId()
     {
         return id;
@@ -24,6 +29,11 @@ public class Area extends DataSupport
         return area;
     }
 
+    public int getCity_id()
+    {
+        return city_id;
+    }
+
     public void setId(int id)
     {
         this.id = id;
@@ -32,6 +42,11 @@ public class Area extends DataSupport
     public void setArea(String area)
     {
         this.area = area;
+    }
+
+    public void setCity_id(int city_id)
+    {
+        this.city_id = city_id;
     }
 
     /**

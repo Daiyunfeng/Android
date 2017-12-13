@@ -62,6 +62,7 @@ public class MainActivity extends Activity
         btnLab9.setOnClickListener(new MyButtonOnClickListener(HttpActivity.class));
         btnLab10.setOnClickListener(new MyButtonOnClickListener(BroadcastActivity.class));
         btnLab11.setOnClickListener(new MyButtonOnClickListener(DataActivity.class));
+        btnLab12.setOnClickListener(new MyButtonOnClickListener(SqlActivity.class));
         btnDelete.setOnClickListener(new View.OnClickListener()
         {
             @Override

@@ -7,12 +7,20 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.example.lenovo.hello.R;
+import com.example.lenovo.hello.entity.Area;
+import com.example.lenovo.hello.entity.City;
+import com.example.lenovo.hello.entity.Province;
+
+import org.litepal.LitePal;
+import org.litepal.LitePalDB;
+import org.litepal.crud.DataSupport;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
 
 /**
  * Created by lenovo on 2017/9/30.
@@ -24,12 +32,14 @@ import java.io.InputStream;
 
 public class DBManager
 {
+    public static final String DATABASE_2 = "customer";
     private static final String TAG = "DBManager";
     private static final String DB_NAME = "city_province.db"; //保存的数据库文件名
     private static final String PACKAGE_NAME = "com.example.lenovo.hello";
+    private static final String DB_REAL_PATH = "/data/user/0/" + PACKAGE_NAME + "/databases";
     private static final String DB_PATH = "/data"
             + Environment.getDataDirectory().getAbsolutePath() + "/"
-            + PACKAGE_NAME + "/databases";  //在手机里存放数据库的位置
+            + PACKAGE_NAME + "/databases";  //在手机里存放数据库的位置 /data/data/com.example.lenovo.hello/databases
     private static final String DB_FILE = DB_PATH + "/" + DB_NAME;
     private static final int BUFFER_SIZE = 1024;
     private SQLiteDatabase db;
@@ -66,13 +76,14 @@ public class DBManager
                     R.raw.city_province); //欲导入的数据库 读入
             FileOutputStream fos = new FileOutputStream(DB_FILE);   //输出
             byte[] buffer = new byte[BUFFER_SIZE];  //一次读取 BUFFER_SIZE 个字节
-            int count = 0;
-            Log.i(TAG, "Start copy");
+            int count = 0, size = 0;
+            Log.i(TAG, "Start copy " + " to " + DB_FILE);
             while ((count = is.read(buffer)) > 0)
             {
+                size += count;
                 fos.write(buffer, 0, count);
             }
-            Log.i(TAG, "End copy");
+            Log.i(TAG, "End copy size " + size);
             fos.close();
             is.close();
             Log.i(TAG, "End init");
@@ -112,5 +123,10 @@ public class DBManager
         {
             Log.e(TAG, e.getMessage());
         }
+    }
+
+    public static LitePalDB useDataBase(String database)
+    {
+        return LitePalDB.fromDefault(database);
     }
 }

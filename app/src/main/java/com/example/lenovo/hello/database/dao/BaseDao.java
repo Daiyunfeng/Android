@@ -9,7 +9,7 @@ import java.util.List;
  * Created by lenovo on 2017/9/29.
  */
 
-public class BaseDao
+public class BaseDao<T>
 {
     public static <T> List<T> queryList(String sql, String[] params, T t)
     {

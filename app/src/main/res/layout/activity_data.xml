@@ -2,7 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
+              android:layout_height="match_parent"
+              android:focusable="true"
+              android:focusableInTouchMode="true">
     <EditText
         android:id="@+id/et_data_username"
         android:layout_gravity="center"
@@ -52,8 +54,36 @@
         android:textSize="20dp"
         android:text="加载首选项页面"/>
 
-    <FrameLayout
-        android:id="@+id/fl_data_preference"
+    <AutoCompleteTextView
+        android:id="@+id/actv_data_username"
+        android:layout_gravity="center"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:hint="输入用户名"/>
+
+    <AutoCompleteTextView
+        android:id="@+id/actv_data_password"
+        android:layout_gravity="center"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:hint="输入密码"/>
+
+    <Button
+        android:id="@+id/btn_data_login2"
+        android:layout_gravity="center"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="登陆"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+        <FrameLayout
+            android:id="@+id/fl_data_preference"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </ScrollView>
 </LinearLayout>
