@@ -34,6 +34,9 @@ import java.util.List;
 import java.util.Set;
 
 /**
+ * sharedPreferences 存储第一块登陆信息
+ * 文件保存第二块登陆用户名
+ * preferenceFragment 模拟一些按钮 加载页为 MyPreferenceFragment
  * Created by lenovo on 2017/12/11.
  */
 
@@ -119,6 +122,9 @@ public class DataActivity extends BaseActivity
         });
     }
 
+    /**
+     * 返回键 将flag 改为false 代表 Fragment页未载入
+     */
     @Override
     public void onBackPressed()
     {
@@ -129,6 +135,9 @@ public class DataActivity extends BaseActivity
         super.onBackPressed();
     }
 
+    /**
+     * 打开此Activity后加载数据
+     */
     private void loadBySharedPreferences()
     {
         Boolean isRemember = sp.getBoolean(SP_ITEM_ISREM, false);
@@ -141,6 +150,9 @@ public class DataActivity extends BaseActivity
         }
     }
 
+    /**
+     * 记住密码将数据存到sharedPreferences
+     */
     private void saveBySharedPreferences()
     {
         SharedPreferences.Editor editor = sp.edit();
@@ -150,6 +162,9 @@ public class DataActivity extends BaseActivity
         editor.commit();
     }
 
+    /**
+     * 从文件中读取自动补全的usernmae
+     */
     private void loadUsernameByFile()
     {
         try
@@ -172,6 +187,10 @@ public class DataActivity extends BaseActivity
         }
     }
 
+    /**
+     * 更新完usernames后
+     * 保存到文件中
+     */
     private void saveUsernameByFile()
     {
         try
@@ -197,6 +216,10 @@ public class DataActivity extends BaseActivity
         }
     }
 
+    /**
+     * 更新完usernames后
+     * 加载自动补全的数据
+     */
     private void loadAutoCompleteData()
     {
         int count = 0;

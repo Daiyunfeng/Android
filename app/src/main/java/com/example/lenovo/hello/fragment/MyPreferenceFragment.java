@@ -21,6 +21,8 @@ import com.example.lenovo.hello.activity.ListActivity;
 import com.example.lenovo.hello.utils.MyToast;
 
 /**
+ * 选择语言 跳转到 ListActivity startActivityForResult
+ * 重写了onSharedPreferenceChanged 如果修改了运营商 就将运营商显示在 summary上
  * Created by lenovo on 2017/12/11.
  */
 
@@ -47,6 +49,10 @@ public class MyPreferenceFragment extends PreferenceFragment implements SharedPr
         super.onResume();
     }
 
+    /**
+     * 将自己额外定义的 SP_ITEM_LANGUAGE 载入
+     * 将list_vendor中选择的运营商 显示在此页面
+     */
     private void loadByPreference()
     {
         String value = sp.getString("list_vendor", "NULL");
@@ -82,7 +88,6 @@ public class MyPreferenceFragment extends PreferenceFragment implements SharedPr
             }
         });
     }
-
 
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key)

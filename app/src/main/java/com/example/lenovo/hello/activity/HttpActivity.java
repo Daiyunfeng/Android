@@ -22,15 +22,13 @@ import com.example.lenovo.hello.R;
 import com.example.lenovo.hello.adapter.WeaterPagersAdapter;
 import com.example.lenovo.hello.entity.City;
 import com.example.lenovo.hello.entity.Province;
-import com.example.lenovo.hello.model.Weater;
+import com.example.lenovo.hello.model.Weather;
 import com.google.gson.Gson;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.litepal.LitePal;
-import org.litepal.LitePalDB;
 import org.litepal.crud.DataSupport;
-import org.litepal.util.Const;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -52,7 +50,7 @@ import okhttp3.Response;
 
 public class HttpActivity extends AppCompatActivity
 {
-    private static final int REQUEST_STATUS_OK = 0, REQUEST_STATUS_ERROR = 1, WEATER_RESULT = 2, POST_ERROR = 3, POST_OK = 4;
+    private static final int REQUEST_STATUS_OK = 0, REQUEST_STATUS_ERROR = 1, WEATHER_RESULT = 2, POST_ERROR = 3, POST_OK = 4;
     private static final String TAG = "HttpActivity";
     private TabLayout tabLayout;
     private ViewPager viewPager;
@@ -63,7 +61,7 @@ public class HttpActivity extends AppCompatActivity
     private String cityName;
     private String URL = "http://wthrcdn.etouch.cn/weather_mini?city=";
     private MyHandle handle = new MyHandle();
-    private List<Weater> weaters;
+    private List<Weather> weathers;
     private List<String> titles;
 
     @Override
@@ -181,16 +179,16 @@ public class HttpActivity extends AppCompatActivity
                                 message.obj = cityName + "的天气";
                                 handle.sendMessage(message);
 
-                                weaters = new ArrayList<Weater>();
+                                weathers = new ArrayList<Weather>();
                                 titles = new ArrayList<String>();
-                                weaters.add(gson.fromJson(jsonObject.getJSONObject("data").get("yesterday").toString(), Weater.class));
-                                weaters.addAll(Arrays.asList(gson.fromJson(jsonObject.getJSONObject("data").getJSONArray("forecast").toString(), Weater[].class)));
-                                for (int i = 0; i < weaters.size(); i++)
+                                weathers.add(gson.fromJson(jsonObject.getJSONObject("data").get("yesterday").toString(), Weather.class));
+                                weathers.addAll(Arrays.asList(gson.fromJson(jsonObject.getJSONObject("data").getJSONArray("forecast").toString(), Weather[].class)));
+                                for (int i = 0; i < weathers.size(); i++)
                                 {
-                                    titles.add(weaters.get(i).getDate());
+                                    titles.add(weathers.get(i).getDate());
                                 }
                                 Message weaterResult = Message.obtain();
-                                weaterResult.what = HttpActivity.WEATER_RESULT;
+                                weaterResult.what = HttpActivity.WEATHER_RESULT;
                                 handle.sendMessage(weaterResult);
                             } else
                             {
@@ -222,9 +220,9 @@ public class HttpActivity extends AppCompatActivity
                 String password = passwordEditText.getText().toString();
                 String urlStr = "https://d-star.xyz/android/login.php";
                 OkHttpClient okHttpClient = new OkHttpClient.Builder()
-                        .connectTimeout(10, TimeUnit.SECONDS)
-                        .readTimeout(10, TimeUnit.SECONDS)
-                        .writeTimeout(10, TimeUnit.SECONDS)
+                        .connectTimeout(2, TimeUnit.SECONDS)
+                        .readTimeout(2, TimeUnit.SECONDS)
+                        .writeTimeout(2, TimeUnit.SECONDS)
                         .build();
                 RequestBody requestBodyPost = new FormBody.Builder()
                         .add("user_id", username)
@@ -280,6 +278,9 @@ public class HttpActivity extends AppCompatActivity
         });
     }
 
+    /**
+     * 接受REQUEST_STATUS_OK,REQUEST_STATUS_ERROR,WEATHER_RESULT,POST_ERROR,POST_OK
+     */
     private class MyHandle extends Handler
     {
         @Override
@@ -295,13 +296,13 @@ public class HttpActivity extends AppCompatActivity
                     tabLayout.removeAllTabs();
                     viewPager.removeAllViews();
                     break;
-                case HttpActivity.WEATER_RESULT:
+                case HttpActivity.WEATHER_RESULT:
                     tabLayout.removeAllTabs();
-                    for (int i = 0; i < weaters.size(); i++)
+                    for (int i = 0; i < weathers.size(); i++)
                     {
                         tabLayout.addTab(tabLayout.newTab().setText(titles.get(i)));
                     }
-                    viewPager.setAdapter(new WeaterPagersAdapter(getSupportFragmentManager(), weaters, titles));
+                    viewPager.setAdapter(new WeaterPagersAdapter(getSupportFragmentManager(), weathers, titles));
                     tabLayout.setupWithViewPager(viewPager);
                     break;
                 case HttpActivity.POST_ERROR:

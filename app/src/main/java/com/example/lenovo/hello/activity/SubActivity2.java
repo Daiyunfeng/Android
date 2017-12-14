@@ -13,6 +13,7 @@ import com.example.lenovo.hello.R;
 import com.example.lenovo.hello.utils.RandomColor;
 
 /**
+ * PhoneActivity的子页面
  * Created by lenovo on 2017/11/1.
  */
 

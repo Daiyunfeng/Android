@@ -5,31 +5,28 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.lenovo.hello.R;
-import com.example.lenovo.hello.entity.Province;
-import com.example.lenovo.hello.model.Weater;
-import com.example.lenovo.hello.utils.MyToast;
+import com.example.lenovo.hello.model.Weather;
 
 /**
  * Created by lenovo on 2017/11/15.
  */
 
-public class WeaterListPagerFragment extends Fragment
+public class WeatherListPagerFragment extends Fragment
 {
-    private Weater weater;
+    private Weather weather;
 
-    public WeaterListPagerFragment()
+    public WeatherListPagerFragment()
     {
 
     }
 
-    public WeaterListPagerFragment(Weater weater)
+    public WeatherListPagerFragment(Weather weather)
     {
-        this.weater = weater;
+        this.weather = weather;
     }
 
     @Override
@@ -39,12 +36,12 @@ public class WeaterListPagerFragment extends Fragment
         ListView listView = (ListView) view.findViewById(R.id.lv_page_header);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1);
 
-        adapter.add(weater.getDate());
-        adapter.add("最高温 : " + weater.getHigh());
-        adapter.add("最低温 : " + weater.getLow());
-        adapter.add("风向 : " + weater.getFx());
-        adapter.add("风力 : " + weater.getFl());
-        adapter.add("天气 : " + weater.getType());
+        adapter.add(weather.getDate());
+        adapter.add("最高温 : " + weather.getHigh());
+        adapter.add("最低温 : " + weather.getLow());
+        adapter.add("风向 : " + weather.getFx());
+        adapter.add("风力 : " + weather.getFl());
+        adapter.add("天气 : " + weather.getType());
 
         listView.setAdapter(adapter);
         return view;

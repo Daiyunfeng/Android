@@ -24,6 +24,7 @@
             android:layout_height="wrap_content"
             android:textSize="15dp"
             android:maxLines="1"
+            android:singleLine="true"
             android:layout_weight="8"/>
     </LinearLayout>
 
@@ -46,6 +47,7 @@
             android:layout_height="wrap_content"
             android:textSize="15dp"
             android:maxLines="1"
+            android:singleLine="true"
             android:layout_weight="8"/>
     </LinearLayout>
 
@@ -68,6 +70,7 @@
             android:layout_height="wrap_content"
             android:textSize="15dp"
             android:maxLines="1"
+            android:singleLine="true"
             android:layout_weight="8"/>
     </LinearLayout>
 
@@ -107,24 +110,36 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
         android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="ID:"/>
+        <EditText
+            android:id="@+id/et_sql_id"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:maxLines="1"
+            android:layout_weight="1"/>
         <Button
-            android:id="@+id/btn_sql_add_id"
+            android:id="@+id/btn_sql_update_id"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="添加数据"/>
+            android:text="ID更新"/>
         <Button
             android:id="@+id/btn_sql_find_id"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="查找全部"/>
+            android:text="ID查找"/>
         <Button
             android:id="@+id/btn_sql_delete_id"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="全部删除"/>
+            android:text="ID删除"/>
     </LinearLayout>
 
     <ScrollView

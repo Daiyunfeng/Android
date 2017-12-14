@@ -3,6 +3,7 @@ package com.example.lenovo.hello.entity;
 import org.litepal.crud.DataSupport;
 
 /**
+ * 银行 存储在 LitePal DBManager.DATABASE_2 上
  * Created by lenovo on 2017/12/13.
  */
 

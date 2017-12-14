@@ -81,6 +81,7 @@
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:maxLines="1"
+            android:singleLine="true"
             android:hint="输入用户名"/>
         <EditText
             android:id="@+id/et_http_password"
@@ -88,6 +89,7 @@
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:maxLines="1"
+            android:singleLine="true"
             android:hint="输入密码"/>
         <Button
             android:id="@+id/btn_http_login"
